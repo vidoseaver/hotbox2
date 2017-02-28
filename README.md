@@ -27,7 +27,7 @@ rspec
 
 Productio links:
 * [Hot box](https://mighty-cliffs-80459.herokuapp.com/) (front-end)
-* [Lock box](https://warm-dawn-37097.herokuapp.com/) (front-end)
+* [Lock box](https://warm-dawn-37097.herokuapp.com/) (back-end)
 
 
 ## Info
