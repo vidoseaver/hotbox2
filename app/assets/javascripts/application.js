@@ -12,4 +12,32 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= axios_rails
 //= require_tree .
+
+function getAllLinks(){
+   axios.get('https://warm-dawn-37097.herokuapp.com//api/v1/links')
+  .then(function (response) {
+    renderAllLinksToPage(response.data)
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+function renderAllLinksToPage(links_list=[]){
+  var list = links_list
+  var count = 0
+  list.forEach(function(link){
+    if (count == 0){
+      var row = "<tr class='top' id=all-links-link-id-" + link.id + "> <td> " + link.title + "</td><td>" + link.url + "</td><td>" + link.read + "</td><td>TOP PICK!!!</td></tr>"
+    } else {
+      var row = "<tr class='hot' id=all-links-link-id-" + link.id + "> <td> " + link.title + "</td><td>" + link.url + "</td><td>" + link.read + "</td><td>HOT PICK!!!</td></tr>"
+    }
+
+    count += 1
+    $("#all-links-tbody").append(row)
+  })
+}
+
+getAllLinks()
