@@ -13,7 +13,7 @@ To run it:
 
 ```
 git clone git@github.com:vidoseaver/hotbox2.git
-cd final-hot-reads
+cd hotbox2
 rake db:create
 rake db:migrate
 rails s
